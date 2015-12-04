@@ -11,7 +11,6 @@
       android:fullBackupContent="true"
       android:allowBackup="true"
       >
-
     <activity
         android:name=".EmptyActivity"
         android:label="@string/label_activity"
