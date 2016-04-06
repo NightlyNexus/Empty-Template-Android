@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <style name="Empty"
-      parent="BaseEmpty">
+  <style name="EmptyTheme"
+      parent="BaseEmptyTheme">
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowActionModeOverlay">true</item>
   </style>
 
-  <style name="BaseEmpty"
+  <style name="BaseEmptyTheme"
       parent="android:Theme"/>
 </resources>

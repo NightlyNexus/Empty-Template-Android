@@ -14,7 +14,7 @@
     <activity
         android:name=".EmptyActivity"
         android:label="@string/label_activity"
-        android:theme="@style/Empty"
+        android:theme="@style/EmptyTheme"
         >
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>

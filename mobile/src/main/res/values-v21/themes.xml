@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <style name="BaseEmpty"
-      parent="android:Theme">
-    <item name="android:windowTranslucentStatus">true</item>
+  <style name="BaseEmptyTheme"
+      parent="android:Theme.Material">
   </style>
 </resources>
