@@ -8,5 +8,5 @@
   </style>
 
   <style name="BaseEmptyTheme"
-      parent="android:Theme"/>
+      parent="android:Theme.Holo"/>
 </resources>
