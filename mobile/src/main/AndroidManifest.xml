@@ -5,11 +5,11 @@
 
   <application
       android:name=".EmptyApplication"
-      android:label="@string/label_application"
-      android:icon="@mipmap/ic_launcher"
-      android:supportsRtl="true"
-      android:fullBackupContent="true"
       android:allowBackup="true"
+      android:fullBackupContent="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/label_application"
+      android:supportsRtl="true"
       >
     <activity
         android:name=".EmptyActivity"
