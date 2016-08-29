@@ -7,3 +7,32 @@ buildscript {
     mavenCentral()
   }
 }
+
+ext.supportLibraryVersion = '24.2.0'
+
+allprojects {
+  configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+      if (details.requested.group == 'com.android.support' &&
+          details.requested.name !=
+          'multidex' &&
+          details.requested.name !=
+          'multidex-instrumentation') {
+        // We want to force all support libraries to use the same version, even if they're transitive.
+        details.useVersion supportLibraryVersion
+      }
+    }
+  }
+
+  afterEvaluate { project ->
+    project.configurations.all {
+      resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.version.contains('+')) {
+          throw new GradleException(
+              "Wildcard dependency forbidden: ${requested.group}:${requested.name}:${requested.version}")
+        }
+      }
+    }
+  }
+}
