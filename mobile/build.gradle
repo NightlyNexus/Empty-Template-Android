@@ -7,8 +7,8 @@ def versionBuild = 0
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 24
-  buildToolsVersion '24.0.2'
+  buildToolsVersion rootProject.buildToolsVersion
+  compileSdkVersion rootProject.compileSdkVersion
 
   defaultConfig {
     applicationId 'com.example.emptytemplate'
