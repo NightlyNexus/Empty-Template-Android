@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.emptytemplate"
-    >
+    package="com.example.emptytemplate">
 
   <application
       android:name=".EmptyApplication"
@@ -9,13 +8,11 @@
       android:fullBackupContent="true"
       android:icon="@mipmap/ic_launcher"
       android:label="@string/label_application"
-      android:supportsRtl="true"
-      >
+      android:supportsRtl="true">
     <activity
         android:name=".EmptyActivity"
         android:label="@string/label_activity"
-        android:theme="@style/EmptyTheme"
-        >
+        android:theme="@style/EmptyTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
