@@ -1,10 +1,12 @@
 buildscript {
   dependencies {
     classpath 'com.android.tools.build:gradle:2.2.3'
+    classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.8'
   }
 
   repositories {
     mavenCentral()
+    maven { url 'https://plugins.gradle.org/m2/' }
   }
 }
 
@@ -15,6 +17,22 @@ ext {
 }
 
 allprojects {
+  apply plugin: 'net.ltgt.errorprone'
+  apply plugin: 'checkstyle'
+
+  tasks.withType(JavaCompile) {
+    options.compilerArgs += ['-Xlint:all', '-Werror']
+  }
+
+  task checkstyle(type: Checkstyle) {
+    configFile rootProject.file('checkstyle.xml')
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    classpath = files()
+  }
+
   configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
       if (details.requested.group == 'com.android.support' &&
@@ -22,7 +40,7 @@ allprojects {
           'multidex' &&
           details.requested.name !=
           'multidex-instrumentation') {
-        // We want to force all support libraries to use the same version, even if they're transitive.
+        // Force all support libraries to use the same version, even if they are transitive.
         details.useVersion supportLibraryVersion
       }
     }
