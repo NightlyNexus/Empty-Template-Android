@@ -28,8 +28,6 @@ android {
   lintOptions {
     abortOnError true
     warningsAsErrors true
-    error 'UnusedResources'
-    error 'CheckResult'
     disable 'Instantiatable' // b.android.com/230652
     textReport true
     textOutput 'stdout'
