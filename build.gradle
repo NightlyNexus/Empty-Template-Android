@@ -33,6 +33,10 @@ allprojects {
     classpath = files()
   }
 
+  checkstyle {
+    toolVersion = '7.7'
+  }
+
   configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
       if (details.requested.group == 'com.android.support' &&
